@@ -143,7 +143,7 @@ const Dashboard = () => {
         sx={{
           height: "270px",
           width: "100%",
-          background: `url(../../../../../../Images/BackG copy.jpg) center/cover no-repeat`,
+          background: `url(../../BackG copy.jpg) center/cover no-repeat`,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
