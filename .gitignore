@@ -1,4 +1,4 @@
-.env
+
 
 # Logs
 logs
@@ -26,3 +26,4 @@ dist-ssr
 *.sw?
 
 
+.env
