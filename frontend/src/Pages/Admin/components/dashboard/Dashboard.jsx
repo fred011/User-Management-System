@@ -150,14 +150,6 @@ const Dashboard = () => {
           position: "relative",
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-          }}
-        />
         {loading ? (
           <CircularProgress sx={{ color: "white", zIndex: 2 }} />
         ) : (
