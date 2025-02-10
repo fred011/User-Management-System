@@ -84,11 +84,14 @@ export default function AttendanceStudentList() {
 
       return { studentId, attendancePercentage };
     } catch (error) {
+      if (error.response && error.response.status === 404) {
+        console.log(`No attendance records for student ${studentId}`);
+        return { studentId, attendancePercentage: 0 }; // No records, set to 0%
+      }
       console.error(
         `Error fetching attendance for student ${studentId}`,
         error
       );
-      return { studentId, attendancePercentage: 0 };
     }
   };
 
