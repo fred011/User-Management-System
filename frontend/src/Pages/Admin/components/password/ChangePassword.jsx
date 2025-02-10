@@ -29,6 +29,10 @@ export default function ChangePassword() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       alert("Password updated successfully!");
+      setFormData({
+        oldPassword: "",
+        newPassword: "",
+      });
     } catch (error) {
       alert(error.response?.data?.error || "Something went wrong!");
     } finally {
