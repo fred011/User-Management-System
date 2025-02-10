@@ -30,7 +30,7 @@ export default function ChangePassword() {
       });
       alert("Password updated successfully!");
       setFormData({
-        oldPassword: "",
+        currentPassword: "",
         newPassword: "",
       });
     } catch (error) {

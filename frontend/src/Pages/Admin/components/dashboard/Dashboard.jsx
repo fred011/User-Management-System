@@ -150,6 +150,17 @@ const Dashboard = () => {
           position: "relative",
         }}
       >
+        <Box
+          sx={{
+            height: "270px",
+            width: "100%",
+            background: `url(../../BackG copy.jpg) center/cover no-repeat`,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+          }}
+        />
         {loading ? (
           <CircularProgress sx={{ color: "white", zIndex: 2 }} />
         ) : (
