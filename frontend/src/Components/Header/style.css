@@ -1,0 +1,62 @@
+/* Header Styles */
+.header {
+
+    width: 100%;
+    height: 60px; /* Adjust header height */
+    background-color: #918C8C;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Ensure header is on top of other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  /* Left Section: Icon and System Name */
+  .header .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header h2 {
+    margin-left: 10px;
+  }
+  
+  /* Center Section: Search Bar */
+  .header .center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header .center input {
+    width: 50%;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Right Section: Scrolling User's Name */
+  .header .right {
+    width: 200px; /* Set width for the scrolling name area */
+    overflow: hidden; /* Hide the overflowing content */
+    white-space: nowrap; /* Prevent the text from wrapping */
+  }
+  
+  .header .scrolling-name {
+    display: inline-block;
+    animation: scrollText 15s linear infinite; /* 15s is the speed, adjust as needed */
+  }
+  
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%); /* Start from outside the screen on the right */
+    }
+    100% {
+      transform: translateX(-100%); /* End at the far left of the container */
+    }
+  }
