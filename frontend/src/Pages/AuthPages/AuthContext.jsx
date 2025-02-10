@@ -1,4 +1,6 @@
-import React, { createContext, useState, useEffect } from "react";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { baseAPI } from "../../environment";
 
@@ -7,7 +9,6 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [dark, setDark] = useState(false);
 
   const verifyToken = async (token) => {
     try {
@@ -35,12 +36,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const mode = localStorage.getItem("mode");
     const savedUser = localStorage.getItem("auth");
     const savedToken = localStorage.getItem("token");
-    if (mode) {
-      setDark(JSON.parse(mode));
-    }
+
     if (savedUser && savedToken) {
       verifyToken(savedToken);
     } else {
@@ -60,15 +58,8 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
   };
 
-  const modeChange = () => {
-    localStorage.setItem("mode", `${!dark}`);
-    setDark(!dark);
-  };
-
   return (
-    <AuthContext.Provider
-      value={{ auth, dark, login, logout, loading, modeChange }}
-    >
+    <AuthContext.Provider value={{ auth, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );
